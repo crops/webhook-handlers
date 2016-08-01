@@ -13,4 +13,4 @@ with open(os.path.join(sys.argv[1], "payload")) as f:
     branches = data["branches"]
 
     if "halstead/tmp" in branches:
-        subprocess.call("trigger-travis.sh")
+        subprocess.call(os.path.join(hook_loc, "trigger-travis.sh"))
