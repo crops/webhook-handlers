@@ -7,7 +7,7 @@ import subprocess
 
 hook_loc = os.path.dirname(os.path.realpath(__file__))
 
-important_branches = [ "halstead/tmp", "halstead/tmp2" ]
+important_branches = [ "master" ]
 
 with open(os.path.join(sys.argv[1], "payload")) as f:
     data = json.load(f)
