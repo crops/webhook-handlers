@@ -30,7 +30,7 @@ def trigger_travis(branch, committish):
     urllib2.urlopen(url_request)
 
 
-important_branches = [ "master" ]
+important_branches = [ "master", "toaster-next", "krogoth" ]
 
 with open(os.path.join(sys.argv[1], "payload")) as f:
     data = json.load(f)
