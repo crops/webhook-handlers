@@ -43,6 +43,6 @@ with open(os.path.join(sys.argv[1], "payload")) as f:
         except ValueError:
             continue
 
-        committish = data["detail"][index]
+        committish = data["detail"][index][1]
         trigger_travis(branch, committish)
         break
