@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import json
 import os
 import sys
 import subprocess
-import urllib2
+from urllib.request import Request, urlopen
 
 def trigger_travis(branch, committish):
     message = "API triggered build... {}:{}".format(branch, committish)
@@ -24,9 +24,9 @@ def trigger_travis(branch, committish):
                 "Travis-API-Version": "3",
                 "Authorization": "token {}".format(token)
               }
-    url_request = urllib2.Request(url, json.dumps(data), headers)
+    url_request = Request(url, json.dumps(data).encode(), headers)
 
-    urllib2.urlopen(url_request)
+    urlopen(url_request)
 
 
 important_branches = [ "master", "toaster-next", "krogoth" ]
