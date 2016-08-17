@@ -26,7 +26,6 @@ def trigger_travis(branch, committish):
               }
     url_request = urllib2.Request(url, json.dumps(data), headers)
 
-    print url_request
     urllib2.urlopen(url_request)
 
 
